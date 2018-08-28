@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
 
     fs.readFile(filePath, (err, data) => {
         if(err)
-            callback(err, null);
+            callback('resource not found', null);
         else
             callback(null, data.toString('base64'));
     });
